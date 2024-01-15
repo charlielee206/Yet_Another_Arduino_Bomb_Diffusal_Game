@@ -11,7 +11,7 @@ in order using the colour mapping.
 4. The sequence will lengthen by one each time you correctly enter a sequence
 until the module is disarmed.
 
-Note: When using the 'Shrimple' version of the game, The lights correspond to the buttons. the following table is not needed.
+Note: When using the 'Simple' version of the game, The lights correspond to the buttons. the following table is not needed.
 ```
 |               | Red Flash | Blue Flash | Green Flash | Yellow Flash | 
 | ------------- | ------------- | ------------- | ------------- | ------------- | 
