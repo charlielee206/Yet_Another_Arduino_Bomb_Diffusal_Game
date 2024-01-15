@@ -23,7 +23,8 @@ Please note that this is for a 'bomb' with 5 puzzle modules. The code is also fo
 
 ## Quick Wiring Guide
 (Based on a 5-module, Arduino Nano build.)</br>
-Pins 0 and 1 are left unused, because they mess up uploading and I did not want to go through the hassle of unplugging and replugging things to the pins every time I uploaded code to the arduino. Feel free to use it in your game. Basically free parking.</br>
+For the main module:</br>
+```Pins 0 and 1 are left unused, because they mess up uploading and I did not want to go through the hassle of unplugging and replugging things to the pins every time I uploaded code to the arduino. Feel free to use it in your game. Basically free parking.</br>
 Pins 2 and 3 are used to light the strike LEDs.</br>
 Pins 4 through 8 are input pins for the modules. Each pin corresponds to a module, and when the pin is pulled to ground, the main controller interprets it as a "solved" module. It will also stop checking that pin for updates after it is cleared.</br>
 Pin 9 is the disarm indicator. It is pulled HIGH when all of the modules are cleared and signals game end.</br>
@@ -33,3 +34,10 @@ Pin 12 is the strike pin. It is pulled to ground when you mess up a module.</br>
 Pin A0 is used as a digital out; it is pulled HIGH when you fail the game by either time out or strike out.</br>
 Pins A1 through A3 are also digital outputs; They are used to feed module status data to the shift register.</br>
 Pins A4 and A5 are used for I2C communication.
+```
+## Making your own modules
+Each module should have 2 basic outputs: a 'strike' output and a 'clear' output.</br>
+both should be pulled HIGH (or not connected at all) when not in use.</br>
+The 'strike' pin should be pulled to ground and back to its original state when the player makes an error on the module. This will tell the main arduino to register a strike, and act accordingly. </br>
+The 'clear' pin should be pulled to ground when the player successfully disarms the module. The main arduino will ignore any changes to the 'clear' input once the specific module is marked clear. This is to help prevent bugs or faulty wiring making the game unbeatable.</br> 
+However, the 'strike' pin is still active even after the module is cleared. (All of the modules share the 'strike' pin input.) Please be wary of this information when designing your own modules.
