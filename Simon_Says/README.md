@@ -1,5 +1,5 @@
 # Simon Says
-### This is a recreation of the 'Simon Says' module form the game "Keep Talking and Nobody Explodes"
+### This is a recreation of the 'Simon Says' module from the game "Keep Talking and Nobody Explodes"
 
 ## Diffusal Manual
 ```
