@@ -7,7 +7,6 @@ A quick simple version of the button module from KTNE. will add DIP switch suppo
 1. Press and hold down the button.
 2. The LED next to the button will light up.
 3. Release the button according to the chart given below.
-
 ```
 |  Light Colour  | Red | Green | Blue | Purple | Yellow | 
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
