@@ -14,7 +14,8 @@ A quick simple version of the button module from KTNE. will add DIP switch suppo
 
 as always, this can be re-configured in code.
 ## BOM
-1x Neopixel LED strip (or chained Neopixel LEDs) </br>
+1x Arduino</br>
+1x Neopixel LED strip (or ring or chained Neopixel LEDs or whatever) </br>
 1x Momentary Button </br>
 
 ## Wiring
