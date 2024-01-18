@@ -41,6 +41,7 @@ as always, this can be re-configured in code.
 1x Single digit 7 segment display</br>
 1x MAX7219 </br>
 6x LEDs (5x Progress indicator LEDs, 1x Module Clear LED)</br>
+2x Toggle Switches (Optional, To ground)
 
 ## Wiring
 Pin 2,3,4,5: Input Buttons (To Ground)</br>
