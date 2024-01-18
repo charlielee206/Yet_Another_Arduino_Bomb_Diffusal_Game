@@ -20,6 +20,7 @@ Note: When using the 'Simple' version of the game, The lights correspond to the 
 | 2 Strikes  | Green  | Red | Yellow | Blue |
 
 ## BOM
+1x Arduino</br>
 4x Light-up arcade buttons (1 of each colour: Blue, Red, Green, Yellow) </br>
 4x LEDs (Included in the arcade buttons) </br>
 
