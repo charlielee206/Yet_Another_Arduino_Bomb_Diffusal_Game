@@ -8,7 +8,7 @@
 3.Once the word is identified, set the dial to the corresponding position or frequency and press the button.
 
 
-Note: The 'complicated' version has a display that shows the current dial settings. The 'simple' version does not have this feature, and the dial position has to be estimated via physical markings on the panel. 
+Note: The 'Displays' version has a display that shows the current dial settings. The 'simple' version does not have this feature, and the dial position has to be estimated via physical markings on the panel. 
 ```
 |      Word         | Dial Position | Displayed Frequency |
 | ------------- | ------------- | ------------- |
