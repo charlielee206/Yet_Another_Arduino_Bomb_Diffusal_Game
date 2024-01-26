@@ -5,7 +5,7 @@
 ```
 1.Interpret the signal from the flashing light using the Morse Code chart to spell one of the words in the table.
 2. The signal will loop, with a long gap between repetitions.
-3.Once the word is identified, set the dial to the corresponding position and press the button.
+3.Once the word is identified, set the dial to the corresponding position or frequency and press the button.
 
 
 Note: The 'complicated' version has a display that shows the current dial settings. The 'simple' version does not have this feature, and the dial position has to be estimated via physical markings on the panel. 
