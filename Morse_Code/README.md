@@ -10,24 +10,24 @@
 
 Note: The 'complicated' version has a display that shows the current dial settings. The 'simple' version does not have this feature, and the dial position has to be estimated via physical markings on the panel. 
 ```
-|      Word         | Dial Position | 
-| ------------- | ------------- | 
-| shell | 0 |
-| halls | 1 |
-| slick | 2 |
-| trick | 3 |
-| boxes | 4 |
-| leaks | 5 |
-| strobe | 6 |
-| bistro | 7 |
-| flick | 8 |
-| bombs | 9 |
-| break | 10 |
-| brick | 11 |
-| steak | 12 |
-| sting | 13 |
-| vector | 14 |
-| beats | 15 |
+|      Word         | Dial Position | Displayed Frequency |
+| ------------- | ------------- | ------------- |
+| shell | 0 | 89.1 ㎒|
+| halls | 1 | 90.3 ㎒|
+| slick | 2 | 93.1 ㎒|
+| trick | 3 | 94.5 ㎒| 
+| boxes | 4 | 95.1 ㎒|
+| leaks | 5 | 95.9 ㎒|
+| strobe | 6 | 97.3 ㎒|
+| bistro | 7 | 97.7 ㎒|
+| flick | 8 | 99.1 ㎒|
+| bombs | 9 | 100.5 ㎒|
+| break | 10 | 101.3 ㎒|
+| brick | 11 | 102.7 ㎒|
+| steak | 12 | 103.5 ㎒|
+| sting | 13 | 104.5 ㎒|
+| vector | 14 | 107.3 ㎒|
+| beats | 15 | 107.7 ㎒|
 
 
 ## BOM
@@ -36,7 +36,7 @@ Note: The 'complicated' version has a display that shows the current dial settin
 1x LED </br>
 1x Momentary Switch/Button</br>
 1x 4-digit 7 Segment Display (optional) </br>
-1x MAX7219 LED matrix Driver / Backpack (optional) </br>
+1x TM1637 LED matrix Driver / Backpack (optional) </br>
 1x Analog DC Voltmeter (Really Optional) </br>
 
 *The parts marked as "optional" is not required in the simple version of the game.</br>
@@ -46,7 +46,15 @@ Note: The 'complicated' version has a display that shows the current dial settin
 Pin 2: LED</br>
 Pin 3: Button </br>
 
+Pin 4: DIO of TM1637</br>
+Pin 6: CLK of TM1637</br>
+
+Pin 5: Analog Voltmeter</br>
+
 Pin 12: Strike Pin (To Main Arduino) </br>
 Pin 13: Clear Pin (To Main Arduino) </br>
 
 Pin A0: Potentiometer 
+
+## Requirements
+This module makes use of the TM1637 library.
