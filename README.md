@@ -11,12 +11,12 @@ This is not a joke. This is not here for the memes or the lulz. Unlike other mod
 What more do I need to say?
 
 ## How it works
-The game can be seperated into three catagories: The main module, multiple puzzle modules, and an optional effects module. (well, technically even the puzzle modules are optional, but you get what I mean...)
+The game can be seperated into three catagories: The main module, multiple puzzle modules, and an optional effects module. (well, technically even the puzzle modules are optional, but you get what I mean...)</br>
 The main game logic is handled by the main module. Remaining time, the number of strikes, cleared modules, clock and clear/strike display...</br>
-The main module constantly checks each puzzle module if the player has cleared it, or made an error. If any of these actions happen, the main module acts accordingly.
-Each puzzle module is self-contained, (Unless you design it otherwise) and handles its minigame/puzzle logic on its own. Most of the time, the puzzle modules should work on its own.
-For some advanced modules, other information may be required. The main module broadcasts remaining time and the number of strikes via I2C. This information can be recieved and used accordingly.
-The effects module may be placed in or outside of the bomb. It is hooked up to all sorts of bells and whistles, and deploys different effects based on the outcome of the game. 
+The main module constantly checks each puzzle module if the player has cleared it, or made an error. If any of these actions happen, the main module acts accordingly.</br>
+Each puzzle module is self-contained, (Unless you design it otherwise) and handles its minigame/puzzle logic on its own. Most of the time, the puzzle modules should work on its own.</br>
+For some advanced modules, other information may be required. The main module broadcasts remaining time and the number of strikes via I2C. This information can be recieved and used accordingly.</br>
+The effects module may be placed in or outside of the bomb. It is hooked up to all sorts of bells and whistles, and deploys different effects based on the outcome of the game. </br>
 
 ## Making your own modules
 Each module should have 2 basic outputs: a 'strike' output and a 'clear' output.</br>
