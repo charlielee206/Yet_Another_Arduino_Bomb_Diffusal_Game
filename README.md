@@ -10,8 +10,11 @@ This is not a joke. This is not here for the memes or the lulz. Unlike other mod
 - **I made it**</br>
 What more do I need to say?
 
+## How it works
+The main game logic is handled by the main module. Remaining time, the number of strikes, cleared modules, clock and clear/strike display...</br>
+The main module constantly checks each module if the player has cleared it, or made an error. If any of these actions happen, the main module acts accordingly.
+For some advanced modules, other information may be required. The main module broadcasts remaining time and the number of strikes via I2C. This information can be recieved and used accordingly.
 
-```
 ## Making your own modules
 Each module should have 2 basic outputs: a 'strike' output and a 'clear' output.</br>
 both should be pulled HIGH (or not connected at all) when not in use.</br>
