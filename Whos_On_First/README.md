@@ -59,3 +59,8 @@ However, I had to generate a font with a very limited and specific characterset.
 It contains the english alphabet, numbers, and the cjk characters used in this example. </br>
 If you want custom characters, you will have to generate and include your own font file. 
 I recommend you check out the [u8g2 Unifont Helper](https://stncrn.github.io/u8g2-unifont-helper/) and [its Github Page](https://github.com/stncrn/u8g2-unifont-helper) on more info on how to create your own file.
+
+## How to add your own text labels
+The array `DisplayList` contains all of the words that can be displayed on the main screen. Edit this to change what gets displayed on the main screen on step 1.</br>
+The array `WordList` contains all of the words that can be displayed on the buttons. Edit this to change what gets displayed on the buttons on step 1 and 2.</br>
+The array `Sequence` is a n by n array, where n being the number of words in the array `WordList`. It is a random, non-repeating sequence of numbers between 1 ~ n, and it corresponds to the order of buttons that should be pressed in step 2.</br>
