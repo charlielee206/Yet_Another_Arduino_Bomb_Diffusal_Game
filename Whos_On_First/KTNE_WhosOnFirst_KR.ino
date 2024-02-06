@@ -15,7 +15,7 @@
 #include <SPI.h>
 
 //==========] Colours [==========//
-#define HIGH_CONTRAST_MODE //uncomment this to enable high contrase mode. Looks terrible, but at least it's readable.
+#define HIGH_CONTRAST_MODE //uncomment this to enable high contrast mode. Looks terrible, but at least it's readable.
 
 #ifdef HIGH_CONTRAST_MODE
   #define BGCOLOUR 0x0000
@@ -116,6 +116,7 @@ const byte StrikePin = A1;
 
 
 void setup(void) {
+  SPI.setClockDivider(SPI_CLOCK_DIV8);
   Serial.begin(9600);
   tft.init(240, 320); 
   ts.begin();
@@ -144,7 +145,6 @@ void setup(void) {
 }
 
 void loop() {
-
   
   if (ts.touched()) {
     if(TouchHandler() == CorrectButton + 1){
@@ -168,6 +168,17 @@ void loop() {
         u8g2_for_adafruit_gfx.setFontMode(1); 
         u8g2_for_adafruit_gfx.setCursor(120 - 60, 220);
         u8g2_for_adafruit_gfx.print("CLEAR!");
+        delay(1000);
+        for(int i = 3; i >= 0; i--){digitalWrite(LED[i],LOW);}
+        delay(300);
+        for(int i = 3; i >= 0; i--){digitalWrite(LED[i],HIGH);}
+        delay(300);
+        for(int i = 3; i >= 0; i--){digitalWrite(LED[i],LOW);}
+        delay(300);
+        for(int i = 3; i >= 0; i--){digitalWrite(LED[i],HIGH);}
+        delay(300);
+        for(int i = 3; i >= 0; i--){digitalWrite(LED[i],LOW);delay(300);}
+        
         while(1){}
       }
       
@@ -181,7 +192,25 @@ void loop() {
       delay(1000);
 
     }
-    else{for(int i = 0; i < 4; i++){digitalWrite(LED[i],LOW);} Stage = 0; digitalWrite(StrikePin, LOW); delay(500); digitalWrite(StrikePin, HIGH);}
+    else{
+      for(int i = 0; i < 4; i++){digitalWrite(LED[i],LOW);} 
+      tft.fillScreen(BGCOLOUR);
+      tft.fillCircle(120, 123, 50, 0xFA8A);
+      u8g2_for_adafruit_gfx.setFont(LARGEFONT);
+      u8g2_for_adafruit_gfx.setForegroundColor(DISPLAYTEXTCOLOUR);
+      u8g2_for_adafruit_gfx.setFontMode(1); 
+      u8g2_for_adafruit_gfx.setCursor(120 - 60, 220);
+      u8g2_for_adafruit_gfx.print("ERROR!");
+      tft.setTextSize(6);
+      tft.setCursor(120 - 15, 105);
+      tft.print("X");
+      Stage = 0; digitalWrite(StrikePin, LOW); 
+      delay(500); 
+      digitalWrite(StrikePin, HIGH);
+      tft.fillScreen(BGCOLOUR);
+      for(int i = 0; i < 7; i++){RedrawButton(i);}
+      NewGameSetup();
+    }
     
     while(ts.touched()){delay(100);}
     }
@@ -323,6 +352,7 @@ void NewGameSetup(){
     
   }
   
+  /*
   Serial.println("==========");
   Serial.print("Display Key: "); Serial.println(DisplayKey);
   Serial.print("Display Text: "); Serial.println(DisplayList[DisplayKey]);
@@ -332,6 +362,7 @@ void NewGameSetup(){
   Serial.print("What The button should say: "); Serial.println(WordList[ButtonKey[DisplayKey]]);
   Serial.print("Reference list on what button to press: "); for(int i = 0; i < 19; i++){Serial.print(Sequence[ButtonKey[DisplayKey]][i]); Serial.print(" ,");}Serial.println();
   Serial.print("Text Reference list on what button to press: "); for(int i = 0; i < 19; i++){Serial.print(WordList[Sequence[ButtonKey[DisplayKey]][i]]); Serial.print(" ,");}Serial.println();
+  */
   
   for(int i = 0; i < 19; i++){
     for(int j = 0; j < 6; j++){
